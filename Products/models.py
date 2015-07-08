@@ -78,7 +78,7 @@ class tags(models.Model):
 
 
 class earingProduct(models.Model):#---------------------------------------------------Earing
-    productCode=models.CharField(max_length=10,null=True,blank=False)
+    productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Studs','Studs'),('Polki','Polki'),('Drops','Drops'),('Hoops','Hoops'),('Jhumki','Jhumki'),('Sui-Dhaga','Sui-Dhaga'),('Cluster','Cluster'),('Chand Bali','Chand Bali'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')
@@ -96,7 +96,7 @@ class earingProduct(models.Model):#---------------------------------------------
         ordering=['productCode']
 
 class bangleProduct(models.Model):#--------------------------------------------------Bangle
-    productCode=models.CharField(max_length=10,null=True,blank=False)
+    productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Round','Round'),('Oval','Oval'),('Gold','Gold'),('Bridal','Bridal'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')
@@ -114,7 +114,7 @@ class bangleProduct(models.Model):#---------------------------------------------
         ordering=['productCode']
 
 class ringProduct(models.Model):#-------------------------------------------------------Ring
-    productCode=models.CharField(max_length=10,null=True,blank=False)
+    productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Engagement','Engagement'),('Couple Bands','Couple Bands'),('Navratna','Navratna'),('Cocktail','Cocktail'),('Platinum','Platinum'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')
@@ -132,7 +132,7 @@ class ringProduct(models.Model):#-----------------------------------------------
         ordering=['productCode']
 
 class braceletProduct(models.Model):#------------------------------------------------Bracelet
-    productCode=models.CharField(max_length=10,null=True,blank=False)
+    productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Gold','Gold'),('Diamond','Diamond'),('Floral','Floral'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')
@@ -150,7 +150,7 @@ class braceletProduct(models.Model):#-------------------------------------------
         ordering=['productCode']
 
 class nosepinProduct(models.Model):#---------------------------------------------------Nosepin
-    productCode=models.CharField(max_length=10,null=True,blank=False)
+    productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Gold','Gold'),('Diamond','Diamond'),('Gemstone','Gemstone'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')
@@ -168,7 +168,7 @@ class nosepinProduct(models.Model):#--------------------------------------------
         ordering=['productCode']
 
 class necklaceProduct(models.Model):#--------------------------------------------------Necklace
-    productCode=models.CharField(max_length=10,null=True,blank=False)
+    productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Gold','Gold'),('Diamond','Diamond'),('Bridal','Bridal'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')
@@ -186,7 +186,7 @@ class necklaceProduct(models.Model):#-------------------------------------------
         ordering=['productCode']
 
 class mangalsutraProduct(models.Model):#---------------------------------------------Mangalsutra
-    productCode=models.CharField(max_length=10,null=True,blank=False)
+    productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Gold','Gold'),('Diamond','Diamond'),('Bridal','Bridal'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')

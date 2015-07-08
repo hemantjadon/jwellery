@@ -12,26 +12,34 @@ from django.apps import apps
 
 class ProductForm(forms.ModelForm):
 	def clean_productCode(self):#------------------------------------------Cleaning Product code for uniqueness of object#
-		print("yeahh")
-		productCode=self.cleaned_data['productCode']
-		products=[]
-		app=apps.get_app_config('Products')
-		models=app.models.values()
-		for model in models:
-			flag=True
-			fields=model._meta.get_all_field_names()
-			for field in fields:
-				if field=='productCode':
-					products+=model.objects.filter(productCode=productCode)
-					if model.objects.filter(productCode=productCode):
-						flag=False
-						break
-			if not flag:
-				print(products)
-				break
-		if(len(products) is not 0):
-			self._errors['productCode']=self.error_class(["Product with this Product Code already exists"])
-			raise forms.ValidationError("")
+		productCodeChanged=False
+		changedData=self.changed_data
+		for d in changedData:
+			if d=='productCode':
+				productCodeChanged=True
+		if productCodeChanged:
+			productCode=self.cleaned_data['productCode']
+			products=[]
+			app=apps.get_app_config('Products')
+			models=app.models.values()
+			for model in models:
+				print(model)
+				flag=True
+				fields=model._meta.get_all_field_names()
+				for field in fields:
+					if field=='productCode':
+						products+=model.objects.filter(productCode=productCode)
+						if model.objects.filter(productCode=productCode):
+							flag=False
+							break
+				if not flag:
+					print(products)
+					break
+			if(len(products) is not 0):
+				self._errors['productCode']=self.error_class(["Product with this Product Code already exists"])
+				raise forms.ValidationError("")
+			else:
+				return self.cleaned_data['productCode']
 		else:
 			return self.cleaned_data['productCode']
 
@@ -112,11 +120,11 @@ class MangalsutraProductAdmin(admin.ModelAdmin):
 #------------------------------------------------Registering-------------------------------------------------------------#
 #------------------------------------------------------------------------------------------------------------------------#
 
-#admin.site.register(DIAMOND)
-#admin.site.register(GEMSTONES)
-#admin.site.register(METAL)
-#admin.site.register(METALCARAT)
-#admin.site.register(tags)
+admin.site.register(DIAMOND)
+admin.site.register(GEMSTONES)
+admin.site.register(METAL)
+admin.site.register(METALCARAT)
+admin.site.register(tags)
 admin.site.register(earingProduct,EaringProductAdmin)
 admin.site.register(bangleProduct,BangleProductAdmin)
 admin.site.register(ringProduct,RingProductAdmin)
