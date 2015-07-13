@@ -1,0 +1,32 @@
+@backgroundColor:#D2D2D2;
+@navFontColor:#908F8F;
+@highlightColor:#D2527F;
+@baseFont:'Oxygen', sans-serif;
+
+body{
+	background-color: lighten(@backgroundColor,15%);
+}
+.rough{
+	width: 100vw;
+	height: 300vh;
+}
+
+.box{
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+.ribbon{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 5px;
+	background-color: @highlightColor;
+}
+
+.maincontent{
+	height: 500px;
+	width: 100vw;
+	background-color: yellow;
+}
