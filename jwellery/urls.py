@@ -18,6 +18,8 @@ from django.contrib import admin
 import grappelli
 
 urlpatterns = patterns('',
-         url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
-         url(r'^admin/',  include(admin.site.urls)), # admin site URLS
+	#url(r'^',include('Products.urls')),	#Products URLS
+	url(r'^',include('roughViews.urls')), #rough Views URLS
+    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
+    url(r'^admin/',  include(admin.site.urls)), # admin site URLS
 )

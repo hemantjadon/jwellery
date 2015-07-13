@@ -23,7 +23,6 @@ class ProductForm(forms.ModelForm):
 			app=apps.get_app_config('Products')
 			models=app.models.values()
 			for model in models:
-				print(model)
 				flag=True
 				fields=model._meta.get_all_field_names()
 				for field in fields:
@@ -33,7 +32,6 @@ class ProductForm(forms.ModelForm):
 							flag=False
 							break
 				if not flag:
-					print(products)
 					break
 			if(len(products) is not 0):
 				self._errors['productCode']=self.error_class(["Product with this Product Code already exists"])
@@ -59,16 +57,21 @@ class metalDetailsInline(admin.TabularInline):
 	filter_horizontal_checkbox = ('carats',)
 	formfield_overrides = {models.ManyToManyField: {'widget': CheckboxSelectMultiple}}
 
-class diamondDetailsInline(admin.TabularInline):
+class diamondDetailsInline(admin.StackedInline):
     model = diamondDetails
     extra = 1
     fields=['diamond','diamondColor','diamondShape','numberOfDiamonds','weightOfDiamonds','diamondPrice']
 
-class gemstoneDetailInline(admin.TabularInline):
+class gemstoneDetailInline(admin.StackedInline):
     model = gemstoneDetails
     extra = 1
     fields=['gemstone','gemstoneShape','numberOfGemstones','gemstonePrice']
 
+class photosInline(admin.TabularInline):
+	model=PHOTOS
+	extra=0
+	min_num=1
+	fields=['photo']
 
 #-------------------------------------------------------X-X-X------------------------------------------------------------#
 
@@ -80,37 +83,37 @@ class gemstoneDetailInline(admin.TabularInline):
 class EaringProductAdmin(admin.ModelAdmin):
 	form = ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
-	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline)
+	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 class BangleProductAdmin(admin.ModelAdmin):
 	form=ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
-	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline)
+	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 class RingProductAdmin(admin.ModelAdmin):
 	form=ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
-	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline)
+	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 class BraceletProductAdmin(admin.ModelAdmin):
 	form=ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
-	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline)
+	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 class NosepinProductAdmin(admin.ModelAdmin):
 	form=ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
-	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline)
+	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 class NecklaceProductAdmin(admin.ModelAdmin):
 	form=ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
-	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline)
+	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 class MangalsutraProductAdmin(admin.ModelAdmin):
 	form=ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
-	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline)
+	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 
 #-------------------------------------------------------X-X-X------------------------------------------------------------#

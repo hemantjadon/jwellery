@@ -76,7 +76,6 @@ class tags(models.Model):
         verbose_name_plural='Tags'
 
 
-
 class earingProduct(models.Model):#---------------------------------------------------Earing
     productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
@@ -277,4 +276,16 @@ class gemstoneDetails(models.Model):#--------------------------------------Gemst
         verbose_name = "Gemstone Detail"
         verbose_name_plural = "Gemstone Details"
 
+class PHOTOS(models.Model):
+    earingPhoto=models.ForeignKey(earingProduct,related_name='earing_photo',blank=True,null=True)
+    banglePhoto=models.ForeignKey(bangleProduct,related_name='bangle_photo',blank=True,null=True)
+    ringPhoto=models.ForeignKey(ringProduct,related_name='ring_photo',blank=True,null=True)
+    braceletPhoto=models.ForeignKey(braceletProduct,related_name='bracelet_photo',blank=True,null=True)
+    nosepinPhoto=models.ForeignKey(nosepinProduct,related_name='nosepin_photo',blank=True,null=True)
+    necklacePhoto=models.ForeignKey(necklaceProduct,related_name='necklace_photo',blank=True,null=True)
+    mangalsutraPhoto=models.ForeignKey(mangalsutraProduct,related_name='mangalsutra_photo',blank=True,null=True)
+    photo=models.ImageField(upload_to='productPhotos/',null=True,blank=False)
+    class Meta:
+        verbose_name = "Photo"
+        verbose_name_plural = "Photos"
 #--------------------------------------------------X-X-X---------------------------------------------------------#
