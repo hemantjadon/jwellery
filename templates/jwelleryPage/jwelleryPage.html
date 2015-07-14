@@ -16,11 +16,85 @@
 	<body>
 		<div class="page">
 			{% include "navbar/navbar.html" %}
-			<div class="mainContent">	
+			<!--Never Use Class .navBar -->
+			<div class="mainContent">
+				<div class="wrapper">
+					
+					<a href={% url 'product' %}?filter=rings>
+						<div class="rings product">
+							<div class="image">
+							</div>
+							<h2>Rings</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=earrings>
+						<div class="earrings product">
+							<div class="image">
+							</div>
+							<h2>Earrings</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=pendants>
+						<div class="pendants product">
+							<div class="image">
+							</div>
+							<h2>Pendants</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=bangles>
+						<div class="bangles product">
+							<div class="image">
+							</div>
+							<h2>Bangles</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=bracelets>
+						<div class="bracelets product">
+							<div class="image">
+							</div>
+							<h2>Bracelets</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=necklaces>
+						<div class="necklaces product">
+							<div class="image">
+							</div>
+							<h2>Necklaces</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=nosePins>
+						<div class="nosePins product">
+							<div class="image">
+							</div>
+							<h2>Nose Pins</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=mangalsutras>
+						<div class="mangalsutras product">
+							<div class="image">
+							</div>
+							<h2>Mangalsutras</h2>
+						</div>
+					</a>
+					
+					<a href={% url 'product' %}?filter=chains>
+						<div class="chains product">
+							<div class="image">
+							</div>
+							<h2>Chains</h2>
+						</div>
+					</a>
+				</div>
 			</div>
+			<div class="ribbon"></div>
 		</div>
-		<div class="rough"></div>
-		<div class="ribbon"></div>
 		<script src={% static "less.js-master/dist/less.js" %} type="text/javascript"></script>
 		<script type="text/javaascript" src={% static "bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js" %}></script>
 		<script type="text/javascript" src={% static "jwelleryPage/js/jwelleryPage.js"%}></script>

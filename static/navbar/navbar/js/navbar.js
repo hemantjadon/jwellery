@@ -1,4 +1,5 @@
-var highlightColor="#D2527F";
+var highlightColor="#30aadc";
+highlightColor="#08ECFF";
 
 (function(){
 	var expand=false;
@@ -11,12 +12,14 @@ var highlightColor="#D2527F";
 				expand=true;
 				$("div.navBar div.wrapper div.sm-navPannel").css({"display":"block"});
 				$(".navBar").css({"height":"400px"});
+				$(".mainContent").css({"margin-top":"400px"});
 				clearInterval(interval);
 			}
 			else
 			{
 				expand=false;
 				$(".navBar").css({"height":"84px"});
+				$(".mainContent").css({"margin-top":"84px"});
 				interval=setInterval(function(){
 					if(!expand)
 					{
@@ -32,6 +35,7 @@ var highlightColor="#D2527F";
 			{
 				expand=false;
 				$(".navBar").css({"height":"84px"});
+				$(".mainContent").css({"margin-top":"84px"});
 				$("div.navBar div.wrapper div.sm-navPannel").css({"display":"none"});
 			}
 		}
@@ -57,11 +61,8 @@ var highlightColor="#D2527F";
 			{
 				pannelList.eq(i).mouseenter(function(){
 					var pageClass=$(pannelList[0]).parent()[0].className.split(" ")[1];	
-					$(this).css({"background-color":"#f2cbd9"});
+					$(this).css({"background-color":highlightColor});
 					$(this).css({"border-bottom-left-radius":"4px","border-top-left-radius":"4px"});
-					$(this).css({"border-bottom":"3px dotted "+highlightColor});
-					$(this).css({"border-top":"3px dotted "+highlightColor});
-					$(this).css({"border-left":"3px dotted "+highlightColor});
 					
 					var hoverClass=$(this)[0].className.split(" ")[1];
 					for(j=0;j<pannelList.length;j++)
@@ -70,9 +71,6 @@ var highlightColor="#D2527F";
 						if(x!==hoverClass)
 						{
 							pannelList.eq(j).css({"background-color":""});
-							pannelList.eq(j).css({"border-bottom":""});
-							pannelList.eq(j).css({"border-top":""});
-							pannelList.eq(j).css({"border-left":""});
 						}
 						if(x===pageClass)
 						{

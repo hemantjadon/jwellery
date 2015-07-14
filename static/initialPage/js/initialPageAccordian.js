@@ -172,7 +172,6 @@
 })();
 
 $(window).on('resize orientationChange',function(){
-	console.log("yeahh")
 	var cards=$("div.viewPort div.superCard");
 	for(i=0;i<cards.length;i++)
 	{
