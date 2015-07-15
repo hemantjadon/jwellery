@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
@@ -47,8 +49,15 @@ class MyUser(AbstractBaseUser):
     )
     first_name=models.CharField(max_length=20)
     last_name=models.CharField(max_length=20)
+    registration_date=models.DateField(default=timezone.now())
+    phone = models.CharField(max_length=12,default='') 
+    street_address = models.CharField(max_length = 100, null=True, blank=True)
+    city = models.CharField(max_length=20,blank=True, null=True)
+    pincode = models.CharField(max_length=8, default="0000000")
     is_active = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
+
+##-----------------------------------UserIPField specification and fetching.
 
     objects = MyUserManager()
 
