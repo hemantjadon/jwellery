@@ -67,10 +67,10 @@ class diamondDetailsInline(admin.TabularInline):
     fields=['diamond_clarity','diamond_color','diamond_shape','number_of_diamonds','weight_of_diamonds','diamond_price']
 
 
-class gemstoneDetailInline(admin.StackedInline):
+class gemstoneDetailInline(admin.TabularInline):
     model = gemstoneDetails
     extra = 1
-    fields=['gemstone','gemstoneShape','numberOfGemstones','gemstonePrice']
+    fields=['gemstone','gemstone_shape','number_of_gemstones','gemstone_price']
 
 class photosInline(admin.TabularInline):
 	model=PHOTOS
@@ -86,9 +86,16 @@ class photosInline(admin.TabularInline):
 #------------------------------------------------------------------------------------------------------------------------#
 
 class EarringProductAdmin(admin.ModelAdmin):
-	form = ProductForm
-	fields = (('product_code','product_type'),'making_charges','tag')
-	inlines = (metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
+    class Media:
+        js = (
+            'jQuery/jquery-1.11.2.min.js',
+            'jquery-tokeninput/src/jquery.tokeninput.js',
+            'adminSite/js/adminSiteTokenizing.js',
+        )
+
+    form = ProductForm
+    fields = (('product_code','product_type'),'making_charges','tag')
+    inlines = (metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
 
 class BangleProductAdmin(admin.ModelAdmin):
 	form = ProductForm

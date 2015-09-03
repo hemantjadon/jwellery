@@ -33,7 +33,7 @@ class METALCARAT(models.Model):
 
 class DIAMOND(models.Model):
     clarity_choices=(('FL','FL'),('IF','IF'),('VVS1','VVS1'),('VVS2','VVS2'),('SI1','SI1'),('SI2','SI2'),('I1','I1'),('I2','I2'),('I3','I3'))
-    diamondClarity=models.CharField(max_length=4,choices=clarity_choices,blank=True,null=True,unique=True)
+    diamond_clarity=models.CharField(max_length=4,choices=clarity_choices,blank=True,null=True,unique=True)
     def __str__(self):
         if self is None:
             return 'None'
@@ -105,7 +105,7 @@ class bangleProduct(models.Model):#---------------------------------------------
     making_charges = models.IntegerField(blank=False,null=True)
     #diamond=models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('bangle','diamond'),related_name='bangleDiamond')
     #diamondPrice=models.IntegerField() #------Can Keep It Here or Not
-    gemstones = models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('bangle','gemstone'),related_name='bangleGemstone')
+    #gemstones = models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('bangle','gemstone'),related_name='bangleGemstone')
     def __str__(self):
         return self.product_type+" / "+self.product_code
 
@@ -124,7 +124,7 @@ class ringProduct(models.Model):#-----------------------------------------------
     making_charges = models.IntegerField(blank=False,null=True)
     #diamond = models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('ring','diamond'),related_name='ringDiamond')
     #diamondPrice=models.IntegerField() #------Can Keep It Here or Not
-    gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('ring','gemstone'),related_name='ringGemstone')
+    #gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('ring','gemstone'),related_name='ringGemstone')
     def __str__(self):
         return self.product_type+" / "+self.product_code
 
@@ -143,7 +143,7 @@ class braceletProduct(models.Model):#-------------------------------------------
     making_charges = models.IntegerField(blank=False,null=True)
     #diamond=models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('bracelet','diamond'),related_name='braceletDiamond')
     #diamondPrice=models.IntegerField() #------Can Keep It Here or Not
-    gemstones = models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('bracelet','gemstone'),related_name='braceletGemstone')
+    #gemstones = models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('bracelet','gemstone'),related_name='braceletGemstone')
     def __str__(self):
         return self.product_type+" / "+self.product_code
 
@@ -162,7 +162,7 @@ class nosepinProduct(models.Model):#--------------------------------------------
     making_charges = models.IntegerField(blank=False,null=True)
     #diamond=models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('nosepin','diamond'),related_name='nosepinDiamond')
     #diamondPrice=models.IntegerField() #------Can Keep It Here or Not
-    gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('nosepin','gemstone'),related_name='nosepinGemstone')
+    #gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('nosepin','gemstone'),related_name='nosepinGemstone')
     def __str__(self):
         return self.productType+" / "+self.productCode
     class Meta:
@@ -180,7 +180,7 @@ class necklaceProduct(models.Model):#-------------------------------------------
     making_charges = models.IntegerField(blank=False,null=True)
     #diamond = models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('necklace','diamond'),related_name='necklaceDiamond')
     #diamondPrice=models.IntegerField() #------Can Keep It Here or Not
-    gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('necklace','gemstone'),related_name='necklaceGemstone')
+    #gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('necklace','gemstone'),related_name='necklaceGemstone')
     def __str__(self):
         return self.productType+" / "+self.productCode
     class Meta:
@@ -198,7 +198,7 @@ class mangalsutraProduct(models.Model):#----------------------------------------
     making_charges=models.IntegerField(blank=False,null=True)
     #diamond = models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('mangalsutra','diamond'),related_name='mangalsutraDiamond')
     #diamondPrice=models.IntegerField() #------Can Keep It Here or Not
-    gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('mangalsutra','gemstone'),related_name='mangalsutraGemstone')
+    #gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('mangalsutra','gemstone'),related_name='mangalsutraGemstone')
     def __str__(self):
         return self.productType+" / "+self.productCode
     class Meta:
@@ -231,11 +231,6 @@ class metalDetails(models.Model):#-----------------------------------------Metal
     def __str__(self):
         return self.carats.carats
 
-    class Meta:
-        verbose_name_plural = "Metal Detail"
-        verbose_name_plural = "Metal Details"
-
-
 
 class diamondDetails(models.Model):#--------------------------------------Diamond Details
     earring = models.ForeignKey(earringProduct,blank=True,null=True)
@@ -256,29 +251,31 @@ class diamondDetails(models.Model):#--------------------------------------Diamon
     weight_of_diamonds=models.DecimalField(max_digits=8,decimal_places=5,null=True,blank=False)
     diamond_price=models.IntegerField() #------Can Keep It Here Or Not
     def __str__(self):
-        if self.diamond is not None:
-            return self.diamond.diamondClarity+" / "+str(self.numberOfDiamonds)+" / "+str(self.weightOfDiamonds)
+        return self.diamond_clarity+" / "+str(self.number_of_diamonds)+" / "+str(self.weight_of_diamonds)
     class Meta:
         verbose_name_plural = "Diamond Detail"
         verbose_name_plural = "Diamond Details"
 
 
 class gemstoneDetails(models.Model):#--------------------------------------Gemstone Details
-    earring=models.ForeignKey(earringProduct,blank=True,null=True)
-    bangle=models.ForeignKey(bangleProduct,blank=True,null=True)
-    ring=models.ForeignKey(ringProduct,blank=True,null=True)
-    bracelet=models.ForeignKey(braceletProduct,blank=True,null=True)
-    nosepin=models.ForeignKey(nosepinProduct,blank=True,null=True)
-    necklace=models.ForeignKey(necklaceProduct,blank=True,null=True)
-    mangalsutra=models.ForeignKey(mangalsutraProduct,blank=True,null=True)
-    gemstone=models.ForeignKey(GEMSTONES,blank=False,null=True)
-    shapeChoices=(('Other','Other'),('Round','Round'),('Oval','Oval'),('Pear','Pear'),('Heart','Heart'),('Princess','Princess'),('Asscher','Asscher'),('Marquise','Marquise'),('Emerald','Emerald'),('Radiant','Radiant'),('Cushion','Cushion'))
-    gemstoneShape=models.CharField(max_length=15,choices=shapeChoices,blank=True,null=True)
-    numberOfGemstones=models.IntegerField(null=True,blank=False)
-    weightOfGemstones=models.DecimalField(max_digits=8,decimal_places=5,null=True)#---------------------------Currently not included in admin site
-    gemstonePrice=models.IntegerField(null=True,blank=False) #------Can Keep It Here or not
+    earring = models.ForeignKey(earringProduct,blank=True,null=True)
+    bangle = models.ForeignKey(bangleProduct,blank=True,null=True)
+    ring = models.ForeignKey(ringProduct,blank=True,null=True)
+    bracelet = models.ForeignKey(braceletProduct,blank=True,null=True)
+    nosepin = models.ForeignKey(nosepinProduct,blank=True,null=True)
+    necklace = models.ForeignKey(necklaceProduct,blank=True,null=True)
+    mangalsutra = models.ForeignKey(mangalsutraProduct,blank=True,null=True)
+    #gemstone=models.ForeignKey(GEMSTONES,blank=False,null=True)
+
+    stone_choices=(('Emerald','Emerald'),('Ruby','Ruby'),('Amethyst','Amethyst'),('Pink Tourmaline','Pink Tourmaline'),('Garnet','Garnet'),('Citrine','Citrine'),('Pearls','Pearls'),('Blue Topaz','Blue Topaz'),('Saphire','Saphire'),('Iolite','Iolite'))
+    gemstone=models.CharField(max_length=20,choices=stone_choices,null=True,blank=False,unique=True)
+    shape_choices = (('Other','Other'),('Round','Round'),('Oval','Oval'),('Pear','Pear'),('Heart','Heart'),('Princess','Princess'),('Asscher','Asscher'),('Marquise','Marquise'),('Emerald','Emerald'),('Radiant','Radiant'),('Cushion','Cushion'))
+    gemstone_shape = models.CharField(max_length=15,choices=shape_choices,blank=True,null=True)
+    number_of_gemstones=models.IntegerField(null=True,blank=False)
+    weight_of_gemstones=models.DecimalField(max_digits=8,decimal_places=5,null=True)#---------------------------Currently not included in admin site
+    gemstone_price=models.IntegerField(null=True,blank=False) #------Can Keep It Here or not
     def __str__(self):
-        return self.gemstone.gemstone+" / "+str(self.numberOfGemstones)+" / "+str(self.weightOfGemstones)
+        return self.gemstone+" / "+str(self.numberOfGemstones)+" / "+str(self.weightOfGemstones)
     class Meta:
         verbose_name = "Gemstone Detail"
         verbose_name_plural = "Gemstone Details"
