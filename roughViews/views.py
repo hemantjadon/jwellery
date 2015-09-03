@@ -3,6 +3,7 @@ from Products.models import *
 from roughViews.forms import filterForm
 from django.http import HttpResponse
 from django.core import serializers
+from django.apps import apps
 
 # Create your views here.
 def initialPage(request):
@@ -24,5 +25,12 @@ def giftsPage(request):
 	return render(request,'jwelleryPage/jwelleryPage.html',{"page":"gifts"})
 
 def productPage(request):
-	print(request.GET['filter'])
-	return render(request,'jwelleryProductPage/jewlleryProductPage.html',{"page":"jwellery","filterForm":filterForm})
+	identifier=request.GET.getlist('identifier')
+	products=[]
+	if ((len(identifier) is not 0) and (identifier[0] is not '')):
+		app=apps.get_app_config('Products')
+		models=app.get_model(identifier[0])
+		print(models)
+		products+=models.objects.all()
+
+	return render(request,'jwelleryProductPage/jewlleryProductPage.html',{"page":"jwellery","filterForm":filterForm,"products":products})

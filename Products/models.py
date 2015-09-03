@@ -76,22 +76,22 @@ class tags(models.Model):
         verbose_name_plural='Tags'
 
 
-class earingProduct(models.Model):#---------------------------------------------------Earing
+class earringProduct(models.Model):#---------------------------------------------------Earing
     productCode=models.CharField(max_length=10,null=True,blank=False,unique=True)
     dateAdded=models.DateTimeField(auto_now_add=True)
     productTypeChoice=(('Other','Other'),('Studs','Studs'),('Polki','Polki'),('Drops','Drops'),('Hoops','Hoops'),('Jhumki','Jhumki'),('Sui-Dhaga','Sui-Dhaga'),('Cluster','Cluster'),('Chand Bali','Chand Bali'))
     productType=models.CharField(max_length=20,choices=productTypeChoice,null=True,blank=False,default='')
-    tag=models.ManyToManyField(tags,related_name='earingTAGS',blank=True)
-    metal=models.ManyToManyField(METALCARAT,through='metalDetails',through_fields=('earing','carats'),related_name='earingMetal',blank=False)
+    tag=models.ManyToManyField(tags,related_name='earringTAGS',blank=True)
+    metal=models.ManyToManyField(METALCARAT,through='metalDetails',through_fields=('earring','carats'),related_name='earingMetal',blank=False)
     makingCharges=models.IntegerField(blank=False,null=True)
-    diamond=models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('earing','diamond'),related_name='earingDiamond')
+    diamond=models.ManyToManyField(DIAMOND,through='diamondDetails',through_fields=('earring','diamond'),related_name='earingDiamond')
     #diamondPrice=models.IntegerField() #------Can Keep It Here or Not
-    gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('earing','gemstone'),related_name='earingGemstone')
+    gemstones=models.ManyToManyField(GEMSTONES,through='gemstoneDetails',through_fields=('earring','gemstone'),related_name='earingGemstone')
     def __str__(self):
         return self.productType+" / "+self.productCode
     class Meta:
-        verbose_name = "Earing Product"
-        verbose_name_plural = "Earing Products"
+        verbose_name = "Earring Product"
+        verbose_name_plural = "Earring Products"
         ordering=['productCode']
 
 class bangleProduct(models.Model):#--------------------------------------------------Bangle
@@ -213,7 +213,7 @@ class mangalsutraProduct(models.Model):#----------------------------------------
          
 
 class metalDetails(models.Model):#-----------------------------------------Metal Details
-    earing=models.ForeignKey(earingProduct,blank=False,null=True)
+    earring=models.ForeignKey(earringProduct,blank=False,null=True)
     bangle=models.ForeignKey(bangleProduct,blank=True,null=True)
     ring=models.ForeignKey(ringProduct,blank=True,null=True)
     bracelet=models.ForeignKey(braceletProduct,blank=True,null=True)
@@ -233,7 +233,7 @@ class metalDetails(models.Model):#-----------------------------------------Metal
 
 
 class diamondDetails(models.Model):#--------------------------------------Diamond Details
-    earing=models.ForeignKey(earingProduct,blank=True,null=True)
+    earring=models.ForeignKey(earringProduct,blank=True,null=True)
     bangle=models.ForeignKey(bangleProduct,blank=True,null=True)
     ring=models.ForeignKey(ringProduct,blank=True,null=True)
     bracelet=models.ForeignKey(braceletProduct,blank=True,null=True)
@@ -257,7 +257,7 @@ class diamondDetails(models.Model):#--------------------------------------Diamon
 
 
 class gemstoneDetails(models.Model):#--------------------------------------Gemstone Details
-    earing=models.ForeignKey(earingProduct,blank=True,null=True)
+    earring=models.ForeignKey(earringProduct,blank=True,null=True)
     bangle=models.ForeignKey(bangleProduct,blank=True,null=True)
     ring=models.ForeignKey(ringProduct,blank=True,null=True)
     bracelet=models.ForeignKey(braceletProduct,blank=True,null=True)
@@ -277,14 +277,14 @@ class gemstoneDetails(models.Model):#--------------------------------------Gemst
         verbose_name_plural = "Gemstone Details"
 
 class PHOTOS(models.Model):
-    earingPhoto=models.ForeignKey(earingProduct,related_name='earing_photo',blank=True,null=True)
+    earringPhoto=models.ForeignKey(earringProduct,related_name='earing_photo',blank=True,null=True)
     banglePhoto=models.ForeignKey(bangleProduct,related_name='bangle_photo',blank=True,null=True)
     ringPhoto=models.ForeignKey(ringProduct,related_name='ring_photo',blank=True,null=True)
     braceletPhoto=models.ForeignKey(braceletProduct,related_name='bracelet_photo',blank=True,null=True)
     nosepinPhoto=models.ForeignKey(nosepinProduct,related_name='nosepin_photo',blank=True,null=True)
     necklacePhoto=models.ForeignKey(necklaceProduct,related_name='necklace_photo',blank=True,null=True)
     mangalsutraPhoto=models.ForeignKey(mangalsutraProduct,related_name='mangalsutra_photo',blank=True,null=True)
-    photo=models.ImageField(upload_to='productPhotos/',null=True,blank=False)
+    photo=models.ImageField(upload_to='productPhotos/',null=True,blank=True)
     class Meta:
         verbose_name = "Photo"
         verbose_name_plural = "Photos"

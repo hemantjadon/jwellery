@@ -20,7 +20,7 @@
 			<div class="mainContent">
 				<div class="wrapper">
 					
-					<a href={% url 'product' %}?filter=rings>
+					<a href={% url 'product' %}?identifier=ringProduct>
 						<div class="rings product">
 							<div class="image">
 							</div>
@@ -28,7 +28,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=earrings>
+					<a href={% url 'product' %}?identifier=earringProduct>
 						<div class="earrings product">
 							<div class="image">
 							</div>
@@ -36,7 +36,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=pendants>
+					<a href={% url 'product' %}?identifier=pendantProduct>
 						<div class="pendants product">
 							<div class="image">
 							</div>
@@ -44,7 +44,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=bangles>
+					<a href={% url 'product' %}?identifier=bangleProduct>
 						<div class="bangles product">
 							<div class="image">
 							</div>
@@ -52,7 +52,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=bracelets>
+					<a href={% url 'product' %}?identifier=braceletProduct>
 						<div class="bracelets product">
 							<div class="image">
 							</div>
@@ -60,7 +60,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=necklaces>
+					<a href={% url 'product' %}?identifier=necklaceProduct>
 						<div class="necklaces product">
 							<div class="image">
 							</div>
@@ -68,7 +68,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=nosePins>
+					<a href={% url 'product' %}?identifier=nosePinProduct>
 						<div class="nosePins product">
 							<div class="image">
 							</div>
@@ -76,7 +76,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=mangalsutras>
+					<a href={% url 'product' %}?identifier=mangalsutraProduct>
 						<div class="mangalsutras product">
 							<div class="image">
 							</div>
@@ -84,7 +84,7 @@
 						</div>
 					</a>
 					
-					<a href={% url 'product' %}?filter=chains>
+					<a href={% url 'product' %}?identifier=chainProduct>
 						<div class="chains product">
 							<div class="image">
 							</div>
@@ -96,6 +96,7 @@
 			<div class="ribbon"></div>
 		</div>
 		<script src={% static "less.js-master/dist/less.js" %} type="text/javascript"></script>
+		<script type="text/javascript" src={% static "jQuery/jquery-1.11.2.min.js" %}></script>
 		<script type="text/javaascript" src={% static "bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js" %}></script>
 		<script type="text/javascript" src={% static "jwelleryPage/js/jwelleryPage.js"%}></script>
 	</body>

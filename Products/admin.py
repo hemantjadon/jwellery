@@ -80,7 +80,7 @@ class photosInline(admin.TabularInline):
 #------------------------------------------------Admin Product View------------------------------------------------------#
 #------------------------------------------------------------------------------------------------------------------------#
 
-class EaringProductAdmin(admin.ModelAdmin):
+class EarringProductAdmin(admin.ModelAdmin):
 	form = ProductForm
 	fields=(('productCode','productType'),'makingCharges','tag')
 	inlines=(metalDetailsInline,diamondDetailsInline,gemstoneDetailInline,photosInline)
@@ -128,7 +128,7 @@ admin.site.register(GEMSTONES)
 admin.site.register(METAL)
 admin.site.register(METALCARAT)
 admin.site.register(tags)
-admin.site.register(earingProduct,EaringProductAdmin)
+admin.site.register(earringProduct,EarringProductAdmin)
 admin.site.register(bangleProduct,BangleProductAdmin)
 admin.site.register(ringProduct,RingProductAdmin)
 admin.site.register(braceletProduct,BraceletProductAdmin)

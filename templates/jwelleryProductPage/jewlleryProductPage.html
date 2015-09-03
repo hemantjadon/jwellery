@@ -18,14 +18,30 @@
 			{% include "navbar/navbar.html" %}
 			<!--Never Use Class .navBar -->
 			<div class="mainContent">
-				<form action="" method="post">
-					{% csrf_token %}
-					{{filterForm.as_p}}
-				</form>
+				<div class="wrapper">
+					<div class="filterForm">
+						<!--<form action="" method="post">
+							{% csrf_token %}
+							{{filterForm.as_p}}
+						</form>-->
+					</div>
+					<div class="productPannel">
+						<div class="products">
+							{% for product in products %}
+							<div class="product">
+								<div class="image">
+								</div>
+								<h2>{{product.productType}}</h2>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="rough"></div>
 		<script src={% static "less.js-master/dist/less.js" %} type="text/javascript"></script>
+		<script type="text/javascript" src={% static "jQuery/jquery-1.11.2.min.js" %}></script>
 		<script type="text/javaascript" src={% static "bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js" %}></script>
 		<script type="text/javascript" src={% static "jwelleryProductPage/js/jwelleryProductPage.js"%}></script>
 	</body>
