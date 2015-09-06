@@ -22,7 +22,7 @@ class GemstoneDetailsInline(admin.TabularInline):
     fields = ['gemstone','gemstone_shape','number_of_gemstones','gemstone_price']
 
 class ProductAdmin(admin.ModelAdmin):
-    fields = (('product_code','product_type'),'tag')
+    fields = (('product_code','product_category','product_type'),'tag')
     inlines = (MetalDetailsInline,DiamondDetailsInline,GemstoneDetailsInline)
 
 admin.site.register(tags)

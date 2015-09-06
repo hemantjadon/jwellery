@@ -20,13 +20,13 @@
 		width: 100%;
 		z-index: 1000;
 		height: 84px;
-		-webkit-user-select: none;  
-	  	-moz-user-select: none;    
-	  	-ms-user-select: none;      
+		-webkit-user-select: none;
+	  	-moz-user-select: none;
+	  	-ms-user-select: none;
 	  	user-select: none;
 		cursor: default;
 		background-color: lighten(@backgroundColor,15%);
-		
+
 		.navRibbon{
 			width: 100%;
 			height: 3px;
@@ -43,7 +43,7 @@
 			max-width: 1200px;
 			margin-left: auto;
 			margin-right: auto;
-			
+
 			.logo{
 				background-image: url("http://127.0.0.1:8000/static/images/non-product/logocarat.png");
 				height: 67px;
@@ -52,7 +52,7 @@
 				padding: 0;
 				width: 165px;
 			}
-			
+
 			.nav{
 				padding: 0;
 				width:530px;
@@ -85,7 +85,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.solitaires{
 							display: none;
 							position: absolute;
@@ -99,7 +99,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.goldCoins{
 							display: none;
 							position: absolute;
@@ -113,7 +113,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.collections{
 							display: none;
 							position: absolute;
@@ -127,7 +127,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.gifts{
 							display: none;
 							position: absolute;
@@ -143,9 +143,9 @@
 						}
 					}
 				}
-				
+
 			}
-			
+
 			.dock{
 				width: 180px;
 				ul{
@@ -153,13 +153,13 @@
 					font-family: @baseFont;
 					font-size: 1.5em;
 					padding-top: 20px;
-					
+
 					li{
 						display: inline;
 						padding-left: 20px;
 						position: relative;
 						color: @navFontColor;
-						
+
 						div.circle{
 							position: absolute;
 							top: -10px;
@@ -170,7 +170,7 @@
 							background-color: transparent;
 							border: 1px solid transparent;
 							border-radius: 50%;
-							
+
 							.supp{
 								width: 50px;
 								height: 50px;
@@ -178,15 +178,15 @@
 								top: 20px;
 							}
 						}
-						
+
 						div.account{
 							left: 2px;
 						}
-						
+
 						div.wishlist{
 							top: -12px;
 						}
-						
+
 						div.cart div.toolTip{
 							.tip{
 								display: none;
@@ -198,9 +198,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -214,7 +214,7 @@
 								border-top: 4px solid @highlightColor;
 							}
 						}
-						
+
 						div.wishlist div.toolTip{
 							.tip{
 								display: none;
@@ -226,9 +226,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -242,7 +242,7 @@
 								border-top: 4px solid @highlightColor;
 							}
 						}
-						
+
 						div.search div.toolTip{
 							.tip{
 								display: none;
@@ -254,9 +254,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -269,9 +269,9 @@
 								box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
 								border-top: 4px solid @highlightColor;
 							}
-							
+
 						}
-						
+
 						div.account div.toolTip{
 							.tip{
 								display: none;
@@ -283,9 +283,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -298,14 +298,14 @@
 								box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
 								border-top: 4px solid @highlightColor;
 							}
-							
+
 						}
 					}
-					
+
 					li.more{
 						display: none;
 					}
-					
+
 					li:hover{
 						color: white;
 						div.circle{
@@ -315,19 +315,20 @@
 							height: 50px;
 							box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
 							div.toolTip{
-							.tip{
 								display: block;
+								.tip{
+									display: block;
+								}
+
+								.tipBox{
+									display: block;
+								}
 							}
-							
-							.tipBox{
-								display: block;
-							}
-						}
 						}
 					}
 				}
 			}
-			
+
 			.sm-navPannel{
 				display: none;
 			}
@@ -344,13 +345,13 @@
 		width: 100%;
 		z-index: 1000;
 		height: 84px;
-		-webkit-user-select: none;  
-	  	-moz-user-select: none;    
-	  	-ms-user-select: none;      
+		-webkit-user-select: none;
+	  	-moz-user-select: none;
+	  	-ms-user-select: none;
 	  	user-select: none;
 		cursor: default;
 		background-color: lighten(@backgroundColor,15%);
-		
+
 		.navRibbon{
 			width: 100%;
 			height: 3px;
@@ -366,7 +367,7 @@
 			justify-content: space-between;
 			margin-left: auto;
 			margin-right: auto;
-			
+
 			.logo{
 				background-image: url("http://127.0.0.1:8000/static/images/non-product/logocarat.png");
 				height: 67px;
@@ -375,7 +376,7 @@
 				padding: 0;
 				width: 165px;
 			}
-			
+
 			.nav{
 				padding: 0;
 				width:530px;
@@ -408,7 +409,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.solitaires{
 							display: none;
 							position: absolute;
@@ -422,7 +423,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.goldCoins{
 							display: none;
 							position: absolute;
@@ -436,7 +437,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.collections{
 							display: none;
 							position: absolute;
@@ -450,7 +451,7 @@
 							border-bottom-left-radius: 3px;
 							border-bottom-right-radius: 2px;
 						}
-						
+
 						div.data.gifts{
 							display: none;
 							position: absolute;
@@ -466,9 +467,9 @@
 						}
 					}
 				}
-				
+
 			}
-			
+
 			.dock{
 				width: 180px;
 				ul{
@@ -476,13 +477,13 @@
 					font-family: @baseFont;
 					font-size: 1.5em;
 					padding-top: 20px;
-					
+
 					li{
 						display: inline;
 						padding-left: 20px;
 						position: relative;
 						color: @navFontColor;
-						
+
 						div.circle{
 							position: absolute;
 							top: -10px;
@@ -493,7 +494,7 @@
 							background-color: transparent;
 							border: 1px solid transparent;
 							border-radius: 50%;
-							
+
 							.supp{
 								width: 50px;
 								height: 50px;
@@ -501,15 +502,15 @@
 								top: 20px;
 							}
 						}
-						
+
 						div.account{
 							left: 2px;
 						}
-						
+
 						div.wishlist{
 							top: -12px;
 						}
-						
+
 						div.cart div.toolTip{
 							.tip{
 								display: none;
@@ -521,9 +522,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -537,7 +538,7 @@
 								border-top: 4px solid @highlightColor;
 							}
 						}
-						
+
 						div.wishlist div.toolTip{
 							.tip{
 								display: none;
@@ -549,9 +550,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -565,7 +566,7 @@
 								border-top: 4px solid @highlightColor;
 							}
 						}
-						
+
 						div.search div.toolTip{
 							.tip{
 								display: none;
@@ -577,9 +578,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -592,9 +593,9 @@
 								box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
 								border-top: 4px solid @highlightColor;
 							}
-							
+
 						}
-						
+
 						div.account div.toolTip{
 							.tip{
 								display: none;
@@ -606,9 +607,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -621,14 +622,14 @@
 								box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
 								border-top: 4px solid @highlightColor;
 							}
-							
+
 						}
 					}
-					
+
 					li.more{
 						display: none;
 					}
-					
+
 					li:hover{
 						color: white;
 						div.circle{
@@ -650,7 +651,7 @@
 					}
 				}
 			}
-			
+
 			.sm-navPannel{
 				display: none;
 			}
@@ -670,9 +671,9 @@
 		min-width: 500px;
 		height: 84px;
 		transition:height 1s ease;
-		-webkit-user-select: none;  
-	  	-moz-user-select: none;    
-	  	-ms-user-select: none;      
+		-webkit-user-select: none;
+	  	-moz-user-select: none;
+	  	-ms-user-select: none;
 	  	user-select: none;
 		cursor: default;
 		background-color: lighten(@backgroundColor,15%);
@@ -681,7 +682,7 @@
 			height: 3px;
 			background-color: @highlightColor;
 		}
-		
+
 		.wrapper{
 			padding-left: 17px;
 			padding-right: 17px;
@@ -690,7 +691,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
-			
+
 			.logo{
 				background-image: url("http://127.0.0.1:8000/static/images/non-product/logocarat.png");
 				height: 67px;
@@ -699,11 +700,11 @@
 				padding: 0;
 				width: 165px;
 			}
-			
+
 			.nav{
 				display: none;
 			}
-			
+
 			.dock{
 				width: 240px;
 				ul{
@@ -711,13 +712,13 @@
 					font-family: @baseFont;
 					font-size: 1.5em;
 					padding-top: 20px;
-					
+
 					li{
 						display: inline;
 						padding-left: 20px;
 						position: relative;
 						color: @navFontColor;
-						
+
 						div.circle{
 							position: absolute;
 							top: -10px;
@@ -728,7 +729,7 @@
 							background-color: transparent;
 							border: 1px solid transparent;
 							border-radius: 50%;
-							
+
 							.supp{
 								width: 50px;
 								height: 50px;
@@ -736,16 +737,16 @@
 								top: 20px;
 							}
 						}
-						
+
 						div.account{
 							left: 2px;
 						}
-						
+
 						div.wishlist{
 							top: -12px;
 						}
-						
-						
+
+
 						div.cart div.toolTip{
 							.tip{
 								display: none;
@@ -757,9 +758,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -773,7 +774,7 @@
 								border-top: 4px solid @highlightColor;
 							}
 						}
-						
+
 						div.wishlist div.toolTip{
 							.tip{
 								display: none;
@@ -785,9 +786,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -801,7 +802,7 @@
 								border-top: 4px solid @highlightColor;
 							}
 						}
-						
+
 						div.search div.toolTip{
 							.tip{
 								display: none;
@@ -813,9 +814,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -828,9 +829,9 @@
 								box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
 								border-top: 4px solid @highlightColor;
 							}
-							
+
 						}
-						
+
 						div.account div.toolTip{
 							.tip{
 								display: none;
@@ -842,9 +843,9 @@
 								border-bottom: 10px solid @highlightColor;
 								border-left: 10px solid transparent;
 								border-right: 10px solid transparent;
-							
+
 							}
-							
+
 							.tipBox{
 								z-index: 1001;
 								display: none;
@@ -857,9 +858,9 @@
 								box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
 								border-top: 4px solid @highlightColor;
 							}
-							
+
 						}
-						
+
 						div.more{
 							display: inline-block;
 							position: absolute;
@@ -887,12 +888,12 @@
 							width: 50px;
 							height: 50px;
 							box-shadow: -2px 0px 6px rgba(0,0,0, 0.3);
-							
+
 							div.toolTip{
 							.tip{
 								display: block;
 							}
-							
+
 							.tipBox{
 								display: block;
 							}
@@ -901,7 +902,7 @@
 					}
 				}
 			}
-			
+
 			.sm-navPannel{
 				display: none;
 				position: absolute;
@@ -909,12 +910,12 @@
 				left: 0;
 				width: 100%;
 				height: 300px;
-				
+
 				.pannelWrapper{
 					padding-left: 10px;
 					padding-right: 10px;
 					height: 100%;
-					
+
 					.sidePannel{
 						width: 160px;
 						padding-left: 10px;
@@ -922,24 +923,24 @@
 						height: 95%;
 						position: absolute;
 						top: 0;
-						
+
 						ul{
 							font-family: @baseFont;
 							font-size: 1.2em;
 							margin-top: 25%;
 							position: relative;
-							
+
 							.listOuter{
 								div.data{
 									position: absolute;
-									top:-20%;					
+									top:-20%;
 									left: 148px;
 									width: 80.5vw;
 									min-width: 570px;
 									height: 144%;
 									display: none;
 								}
-								
+
 								li{
 									padding-top: 8px;
 									padding-bottom: 8px;

@@ -1,4 +1,7 @@
 from django.db import models
+import json
+from pprint import pprint
+import collections
 
 # Create your models here.
 
@@ -12,15 +15,24 @@ class tags(models.Model):
         verbose_name_plural = 'Tags'
 
 class Product(models.Model):
+    with open('JSONforms/productChoices.json') as data_file:
+        data = json.load(data_file, object_pairs_hook=collections.OrderedDict)
+
+    product_category_choices = ()
+    for i in data:
+        x = (i,i),
+        product_category_choices+=x
+
     product_code = models.CharField(max_length=10,null=True,blank=False,unique=True)
     date_added = models.DateTimeField(auto_now_add=True)
-    product_category = models.CharField(max_length=15,null=True,blank=False)
+
+    product_category = models.CharField(max_length=15,null=True,blank=False,choices=product_category_choices)
     product_type = models.CharField(max_length=15,null=True,blank=False)
     tag = models.ManyToManyField(tags,related_name='product_tags',blank=True)
 
     def __str__(self):
         return self.product_code+ " / "+self.product_category+" "+self.product_type
-        
+
 class MetalDetails(models.Model):
     product = models.ForeignKey(Product,null=True,blank=False,related_name='metal_details')
 

@@ -60,10 +60,10 @@ highlightColor="#08ECFF";
 			for(i=0;i<pannelList.length;i++)
 			{
 				pannelList.eq(i).mouseenter(function(){
-					var pageClass=$(pannelList[0]).parent()[0].className.split(" ")[1];	
+					var pageClass=$(pannelList[0]).parent()[0].className.split(" ")[1];
 					$(this).css({"background-color":highlightColor});
 					$(this).css({"border-bottom-left-radius":"4px","border-top-left-radius":"4px"});
-					
+
 					var hoverClass=$(this)[0].className.split(" ")[1];
 					for(j=0;j<pannelList.length;j++)
 					{
@@ -82,9 +82,9 @@ highlightColor="#08ECFF";
 					$(this).children("div.data").css({"display":"block"});
 				});
 			}
-		}	
+		}
 	}
-	
+
 	var highlightSideNav=function(){
 		var pannelList=$("div.navBar .sm-navPannel .sidePannel ul .listOuter");
 		var pageClass=$(pannelList[0]).parent()[0].className.split(" ")[1];
@@ -97,7 +97,7 @@ highlightColor="#08ECFF";
 				pannelList.eq(i).css({"border-bottom-left-radius":"4px","border-top-left-radius":"4px"});
 				pannelList.eq(i).children("div.data").css({"display":"block"});
 			}
-			else 
+			else
 			{
 				pannelList.eq(i).css({"border-left":"4px solid transparent"});
 			}
@@ -127,7 +127,7 @@ highlightColor="#08ECFF";
 				$(this).css({"box-shadow":"-2px 3px 6px rgba(0,0,0, 0.3)"});
 				$(this).children("div.data").css({"display":"block"});
 			});
-			
+
 			pannelList.eq(i).mouseleave(function(e){
 				var hoverClass=$(this)[0].className.split(" ")[1];
 				$(this).css({"box-shadow":""});
@@ -153,7 +153,7 @@ highlightColor="#08ECFF";
 				pannelList.eq(i).css({"border-top":"4px solid "+highlightColor});
 				pannelList.eq(i).css({"border-top-right-radius":"4px","border-top-left-radius":"4px"});
 			}
-			else 
+			else
 			{
 				pannelList.eq(i).css({"border-top":"4px solid transparent"});
 				pannelList.eq(i).css({"border-top-right-radius":"4px","border-top-left-radius":"4px"});
