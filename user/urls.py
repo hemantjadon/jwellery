@@ -5,4 +5,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^accounts/login-signup/$',LoginSignup,name='login_signup'),
+    url(r'^accounts/get-or-create/$',GetOrCreate,name='fb_login'),
 ]
