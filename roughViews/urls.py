@@ -11,4 +11,5 @@ urlpatterns = [
 				url(r'^goldCoins/$',goldCoinsPage,name='goldCoins_page'),
 				url(r'^collections/$',collectionsPage,name='collections_page'),
 				url(r'^gifts/$',giftsPage,name='gifts_page'),
+				url(r'^product_detail/$',product_detail_page,name='product_detail'),
 			]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

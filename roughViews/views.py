@@ -34,3 +34,6 @@ def productPage(request):
 		products+=models.objects.all()
 
 	return render(request,'jwelleryProductPage/jewlleryProductPage.html',{"page":"jwellery","filterForm":filterForm,"products":products})
+
+def product_detail_page(request):
+	return render(request,'product_detail/product_detail.html',{})
