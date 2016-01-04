@@ -8,7 +8,7 @@ class MetalDetailsInline(admin.TabularInline):
     model = MetalDetails
     min_num = 1
     extra = 0
-    fields = ['carats','metal','weight_of_metal','price_for_metal','making_charges']
+    fields = ['carats','metal','weight_of_metal','making_charges']
 
 
 class DiamondDetailsInline(admin.TabularInline):
@@ -27,3 +27,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(tags)
 admin.site.register(Product,ProductAdmin)
+admin.site.register(GoldPrice)

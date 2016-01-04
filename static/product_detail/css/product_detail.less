@@ -3,6 +3,8 @@
 @highlightColor:#30aadc;
 @highlightColor:#08ECFF;
 @baseFont:'Oxygen', sans-serif;
+@linkColor:black;
+@tableBackgroundColor:#f6f1ef;
 
 body{
 	background-color: lighten(@backgroundColor,15%);
@@ -156,7 +158,7 @@ body{
            #outer2
            {
                width:100%;
-               height:600px;
+               height:400px;
                background-color:darken(@backgroundColor,1%);
                margin-top:0.9%;
                
@@ -189,11 +191,68 @@ body{
 									  font-size: 12px;
 									  word-wrap: break-word;
 									  padding-left: 10px;
-								}
+							   }
 				            }
 				        }
 				    }
-                }
+
+				    #basic_diamond_details
+                     {
+                          width:60%;
+                          margin-top:3%;
+                          margin-left:5%;
+					     .diamond_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }
+
+
+				    #basic_gemstone_details
+                     {
+                          width:60%;
+                      margin-top:3%;
+                      margin-left:5%;
+					     .gemstone_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }        
+                   }
 
                 #query-form
                 {
@@ -202,6 +261,30 @@ body{
                    background-color:white;
                 }
 
+            }
+
+            #information
+            {
+               display:flex;
+               justify-content:space-around;
+               .info
+               {
+                  ul
+                  {
+                     list-style:none;
+                     li
+                     {
+                        color:@linkColor;
+                        a
+                        {
+                           cursor:pointer;
+                           text-decoration:none;
+                           color:@linkColor; 
+                        }
+                     }
+                  }
+
+               }
             }
 
 		}
@@ -362,6 +445,139 @@ body{
 
 		    }
 
+		   #outer2
+           {
+               width:100%;
+               height:400px;
+               background-color:darken(@backgroundColor,1%);
+               margin-top:0.9%;
+               
+               #product_panel
+                {   
+
+	               #basic_details
+	               {
+	                  width:60%;
+                      margin-top:3%;
+                      margin-left:3%;
+
+
+				        .product_details
+				        { 
+
+	                       border: none;
+	                       width: 100%;
+				           tr
+				           {
+				              margin: 0rem;
+							  border-width: 1px;
+							  border-color: #78777c;
+				              td
+				              {
+				                      border-bottom: 1px solid #d9d9d7;
+	                                  background: #f6f1ef;
+	                                  padding: 0.4rem 0rem;
+									  color: #1f1e24;
+									  font-size: 12px;
+									  word-wrap: break-word;
+									  padding-left: 10px;
+							   }
+				            }
+				        }
+				    }
+
+				    #basic_diamond_details
+                     {
+                          width:60%;
+                          margin-top:3%;
+                          margin-left:3%;
+					     .diamond_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }
+
+
+				    #basic_gemstone_details
+                     {
+                          width:60%;
+                      margin-top:3%;
+                      margin-left:3%;
+					     .gemstone_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }        
+                   }
+
+                #query-form
+                {
+                   width:30%;
+                   height:400px;
+                   background-color:white;
+                }
+
+            }
+
+
+            #information
+            {
+               display:flex;
+               justify-content:space-around;
+               .info
+               {
+                  ul
+                  {
+                     list-style:none;
+                     li
+                     {
+                        color:@linkColor;
+                        a
+                        {
+                           cursor:pointer;
+                           text-decoration:none;
+                           color:@linkColor; 
+                        }
+                     }
+                  }
+
+               }
+            }
+
 		}
 	}
 }
@@ -519,6 +735,139 @@ body{
 
 		    }
 
+		   #outer2
+           {
+               width:100%;
+               height:400px;
+               background-color:darken(@backgroundColor,1%);
+               margin-top:0.9%;
+               
+               #product_panel
+                {   
+
+	               #basic_details
+	               {
+	                  width:60%;
+                      margin-top:3%;
+                      margin-left:1%;
+
+
+				        .product_details
+				        { 
+
+	                       border: none;
+	                       width: 100%;
+				           tr
+				           {
+				              margin: 0rem;
+							  border-width: 1px;
+							  border-color: #78777c;
+				              td
+				              {
+				                      border-bottom: 1px solid #d9d9d7;
+	                                  background: #f6f1ef;
+	                                  padding: 0.4rem 0rem;
+									  color: #1f1e24;
+									  font-size: 12px;
+									  word-wrap: break-word;
+									  padding-left: 10px;
+							   }
+				            }
+				        }
+				    }
+
+				    #basic_diamond_details
+                     {
+                          width:60%;
+                          margin-top:3%;
+                          margin-left:1%;
+					     .diamond_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }
+
+
+				    #basic_gemstone_details
+                     {
+                          width:60%;
+                      margin-top:3%;
+                      margin-left:1%;
+					     .gemstone_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }        
+                   }
+
+                #query-form
+                {
+                   width:30%;
+                   height:400px;
+                   background-color:white;
+                }
+
+            }
+
+
+            #information
+            {
+               display:flex;
+               justify-content:space-around;
+               .info
+               {
+                  ul
+                  {
+                     list-style:none;
+                     li
+                     {
+                        color:@linkColor;
+                        a
+                        {
+                           cursor:pointer;
+                           text-decoration:none;
+                           color:@linkColor; 
+                        }
+                     }
+                  }
+
+               }
+            }
+
 		}
 	}
 }
@@ -675,6 +1024,142 @@ body{
 				}
 
 		    }
+
+
+		   #outer2
+           {
+               width:100%;
+               height:400px;
+               background-color:darken(@backgroundColor,1%);
+               margin-top:0.9%;
+               
+               #product_panel
+                {   
+
+
+	               #basic_details
+	               {
+	                  width:60%;
+                      margin-top:3%;
+                     // margin-left:%;
+
+
+				        .product_details
+				        { 
+
+	                       border: none;
+	                       width: 100%;
+	                       margin-left:10%;
+				           tr
+				           {
+				              margin: 0rem;
+							  border-width: 1px;
+							  border-color: #78777c;
+				              td
+				              {
+				                      border-bottom: 1px solid #d9d9d7;
+	                                  background: #f6f1ef;
+	                                  padding: 0.4rem 0rem;
+									  color: #1f1e24;
+									  font-size: 12px;
+									  word-wrap: break-word;
+									  padding-left: 10px;
+							   }
+				            }
+				        }
+				    }
+
+				    #basic_diamond_details
+                     {
+                          width:60%;
+                          margin-top:3%;
+                          margin-left:5%;
+					     .diamond_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }
+
+
+				    #basic_gemstone_details
+                     {
+                          width:60%;
+                      margin-top:3%;
+                      margin-left:5%;
+					     .gemstone_details
+					        {
+					            border: none;
+		                       width: 100%;
+					           tr
+					           {
+					              margin: 0rem;
+								  border-width: 1px;
+								  border-color: #78777c;
+					              td
+					              {
+					                      border-bottom: 1px solid #d9d9d7;
+		                                  background: #f6f1ef;
+		                                  padding: 0.4rem 0rem;
+										  color: #1f1e24;
+										  font-size: 12px;
+										  word-wrap: break-word;
+										  padding-left: 10px;
+									}
+					            }
+					        }
+					    }        
+                   }
+
+                #query-form
+                {
+                   width:30%;
+                   height:400px;
+                   background-color:white;
+                }
+
+            }
+
+            
+            #information
+            {
+               display:flex;
+               justify-content:space-around;
+               .info
+               {
+                  ul
+                  {
+                     list-style:none;
+                     li
+                     {
+                        color:@linkColor;
+                        a
+                        {
+                           cursor:pointer;
+                           text-decoration:none;
+                           color:@linkColor; 
+                        }
+                     }
+                  }
+
+               }
+            }
 
 		}
 	}

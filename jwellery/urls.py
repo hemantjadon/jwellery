@@ -13,13 +13,23 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url,patterns
-from django.contrib import admin
-import grappelli
+# from django.conf.urls import include, url,patterns
+# from django.contrib import admin
+# import grappelli
 
+# urlpatterns = patterns('',
+#          url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
+#          url(r'^admin/',  include(admin.site.urls)), # admin site URLS
+#          url(r'^')
+# )
+
+from django.conf.urls import include, url
+from django.contrib import admin
+#from register.views import *
+from roughViews.views import *
 urlpatterns = [
-	url(r'^',include('user.urls')),	#user URLS
-	url(r'^',include('roughViews.urls')), #rough Views URLS
-    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
-    url(r'^admin/',  include(admin.site.urls)), # admin site URLS
+    url(r'^admin/', include(admin.site.urls)),
+#    url(r'^',include('register.urls')),
+    url(r'^',include('roughViews.urls')),
+
 ]

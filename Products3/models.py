@@ -13,6 +13,12 @@ class tags(models.Model):
     class Meta:
         verbose_name = 'Tag'
         verbose_name_plural = 'Tags'
+class GoldPrice(models.Model):
+    price_per_gm_24_kt=models.IntegerField()
+    price_per_gm_22_kt=models.IntegerField()
+    price_per_gm_18_kt=models.IntegerField()
+    price_per_gm_14_kt=models.IntegerField()
+     
 
 class Product(models.Model):
     with open('JSONforms/productChoices.json') as data_file:
@@ -23,7 +29,7 @@ class Product(models.Model):
         x = (i,i),
         product_category_choices+=x
 
-    product_code = models.CharField(max_length=10,null=True,blank=False,unique=True)
+    product_code = models.CharField(max_length=10)
     date_added = models.DateTimeField(auto_now_add=True)
 
     product_category = models.CharField(max_length=15,null=True,blank=False,choices=product_category_choices)
@@ -37,12 +43,11 @@ class MetalDetails(models.Model):
     product = models.ForeignKey(Product,null=True,blank=False,related_name='metal_details')
 
     metal_choices = (('Yellow Gold','Yellow Gold'),('White Gold','White Gold'))
-    metal = models.CharField(max_length=15,choices=metal_choices,null=True,blank=False,unique=True)
-    carat_choices=(('14','14'),('16','16'),('18','18'),('19','19'),('20','20'),('21','21'),('22','22'),('23','23'),('24','24'))
-    carats=models.CharField(max_length=2,choices=carat_choices,null=True,blank=False,unique=True)
+    metal = models.CharField(max_length=15,choices=metal_choices,null=True,blank=False)
+    carat_choices=(('14','14'),('18','18'),('22','22'),('24','24'))
+    carats=models.CharField(max_length=2,choices=carat_choices,null=True,blank=False)
 
     weight_of_metal = models.DecimalField(max_digits=8,decimal_places=5,null=True,blank=False)
-    price_for_metal = models.IntegerField(blank=False,null=True)
     making_charges = models.IntegerField(blank=False,null=True)
 
     def __str__(self):
@@ -56,7 +61,7 @@ class DiamondDetails(models.Model):
     product = models.ForeignKey(Product,null=True,blank=False,related_name='diamond_details')
 
     clarity_choices = (('FL','FL'),('IF','IF'),('VVS1','VVS1'),('VVS2','VVS2'),('SI1','SI1'),('SI2','SI2'),('I1','I1'),('I2','I2'),('I3','I3'))
-    diamond_clarity = models.CharField(max_length=4,choices=clarity_choices,blank=True,null=True,unique=True)
+    diamond_clarity = models.CharField(max_length=4,choices=clarity_choices,blank=True,null=True)
     color_choices = (('DF','DF'),('GH','GH'),('IJ','IJ'),('KM','KM'),('NR','NR'),('SZ','SZ'))
     diamond_color = models.CharField(max_length=2,choices=color_choices,default='',null=True,blank=True)
     shape_choices = (('Other','Other'),('Round','Round'),('Oval','Oval'),('Pear','Pear'),('Heart','Heart'),('Princess','Princess'),('Asscher','Asscher'),('Marquise','Marquise'),('Emerald','Emerald'),('Radiant','Radiant'),('Cushion','Cushion'))
