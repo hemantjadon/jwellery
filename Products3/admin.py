@@ -19,7 +19,7 @@ class DiamondDetailsInline(admin.TabularInline):
 class GemstoneDetailsInline(admin.TabularInline):
     model = GemstoneDetails
     extra = 1
-    fields = ['gemstone','gemstone_shape','number_of_gemstones','gemstone_price']
+    fields = ['gemstone','gemstone_shape','weight_of_gemstones','gemstone_price']
 
 class ProductAdmin(admin.ModelAdmin):
     fields = (('product_code','product_category','product_type'),'tag')
