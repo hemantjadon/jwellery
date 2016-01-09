@@ -31,7 +31,7 @@ class Product(models.Model):
 
     product_code = models.CharField(max_length=10)
     date_added = models.DateTimeField(auto_now_add=True)
-
+     
     product_category = models.CharField(max_length=15,null=True,blank=False,choices=product_category_choices)
     product_type = models.CharField(max_length=15,null=True,blank=False)
     tag = models.ManyToManyField(tags,related_name='product_tags',blank=True)
@@ -88,3 +88,7 @@ class GemstoneDetails(models.Model):
     number_of_gemstones=models.IntegerField(null=True,blank=False)
     weight_of_gemstones=models.DecimalField(max_digits=8,decimal_places=5,null=True)#---------------------------Currently not included in admin site
     gemstone_price=models.IntegerField(null=True,blank=False)
+
+class ImageDetails(models.Model):
+    product=models.ForeignKey(Product,null=True,related_name='image_details')
+    image=models.ImageField(upload_to='uploads/')
