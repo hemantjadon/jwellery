@@ -23,9 +23,15 @@ class GemstoneDetailsInline(admin.TabularInline):
     extra = 0
     fields = ['gemstone','gemstone_shape','weight_of_gemstones','gemstone_price']
 
+class ImageDetailsInline(admin.TabularInline):
+    model=ImageDetails
+    extra=1
+    fields=['image']
+
 class ProductAdmin(admin.ModelAdmin):
     fields = (('product_code','product_category','product_type'),'tag')
-    inlines = (MetalDetailsInline,DiamondDetailsInline,GemstoneDetailsInline)
+    inlines = (MetalDetailsInline,DiamondDetailsInline,GemstoneDetailsInline,ImageDetailsInline) 
+                
 
 admin.site.register(tags)
 admin.site.register(Product,ProductAdmin)
