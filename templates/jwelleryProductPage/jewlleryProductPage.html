@@ -19,19 +19,13 @@
 			<!--Never Use Class .navBar -->
 			<div class="mainContent">
 				<div class="wrapper">
-					<div class="filterForm">
-						<!--<form action="" method="post">
-							{% csrf_token %}
-							{{filterForm.as_p}}
-						</form>-->
-					</div>
 					<div class="productPannel">
 						<div class="products">
 							{% for product in products %}
 							<div class="product">
 								<div class="image">
 								</div>
-								<h2>{{product.productType}}</h2>
+								<h2>{{product.product_category}}</h2>
 							</div>
 							{% endfor %}
 						</div>

@@ -13,12 +13,14 @@ class MetalDetailsInline(admin.TabularInline):
 
 class DiamondDetailsInline(admin.TabularInline):
     model = DiamondDetails
-    extra = 1
+    min_num = 0
+    extra = 0
     fields=['diamond_clarity','diamond_color','diamond_shape','number_of_diamonds','weight_of_diamonds','diamond_price']
 
 class GemstoneDetailsInline(admin.TabularInline):
     model = GemstoneDetails
-    extra = 1
+    min_num = 0
+    extra = 0
     fields = ['gemstone','gemstone_shape','weight_of_gemstones','gemstone_price']
 
 class ProductAdmin(admin.ModelAdmin):

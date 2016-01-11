@@ -4,7 +4,7 @@ from roughViews.forms import filterForm
 from django.http import HttpResponse
 from django.core import serializers
 from django.apps import apps
-from Products3.models import *
+from Products3.models import Product
 
 # Create your views here.
 def initialPage(request):
@@ -26,15 +26,10 @@ def giftsPage(request):
 	return render(request,'jwelleryPage/jwelleryPage.html',{"page":"gifts"})
 
 def productPage(request):
-	identifier=request.GET.getlist('identifier')
-	products=[]
-	if ((len(identifier) is not 0) and (identifier[0] is not '')):
-		app=apps.get_app_config('Products')
-		models=app.get_model(identifier[0])
-		print(models)
-		products+=models.objects.all()
-
-	return render(request,'jwelleryProductPage/jewlleryProductPage.html',{"page":"jwellery","filterForm":filterForm,"products":products})
+	identifier=request.GET.get('identifier').title()
+	products=Product.objects.filter(product_category=identifier)
+	print(products)
+	return render(request,'jwelleryProductPage/jewlleryProductPage.html',{"page":"jwellery","products":products})
 
 #def product_detail_page(request):
 #	return render(request,'product_detail/product_detail.html',{})
@@ -60,7 +55,7 @@ def product_detail_page(request,code):
 		for i in metal_data:
 			gold_price=GoldPrice.objects.get(id=1).price_per_gm_24_kt
 			metal_weight=metal_weight+i.weight_of_metal
-			metal_type=i.metal 
+			metal_type=i.metal
 			making_charges=making_charges+i.weight_of_metal*gold_price*i.making_charges/100
 			if i.carats=='22':
 				gold_price=GoldPrice.objects.get(id=1).price_per_gm_22_kt
@@ -70,7 +65,7 @@ def product_detail_page(request,code):
 				metal_kt=i.carats
 			elif i.carats=='14':
 				gold_price=GoldPrice.objects.get(id=1).price_per_gm_14_kt
-				metal_kt=i.carats    	
+				metal_kt=i.carats
 			metal_cost=i.weight_of_metal*gold_price
 
 	if diamond_data:
@@ -88,8 +83,4 @@ def product_detail_page(request,code):
 	'product_category':product_category,'metal_karat':metal_kt,'metal_weight':metal_weight,
 	'diamond_weight':total_diamond_weight,'diamond_color':diamond_color,
 	'diamond_clarity':diamond_clarity,'diamond_data':diamond_data,'gemstone_data':gemstone_data}
-	return render(request,'product_detail/product_detail.html',data)     
-
-
-
-
+	return render(request,'product_detail/product_detail.html',data)
