@@ -15,5 +15,3 @@ urlpatterns = patterns('',
 				url(r'^jwellery/(?P<code>[a-zA-Z0-9_.-=$]+)/$',product_detail_page),
 
 			)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
- 

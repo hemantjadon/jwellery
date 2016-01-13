@@ -4,7 +4,8 @@ from roughViews.forms import filterForm
 from django.http import HttpResponse
 from django.core import serializers
 from django.apps import apps
-from Products3.models import Product
+from Products3.models import *
+
 
 # Create your views here.
 def initialPage(request):
@@ -56,7 +57,7 @@ def product_detail_page(request,code):
 		for i in metal_data:
 			gold_price=GoldPrice.objects.get(id=1).price_per_gm_24_kt
 			metal_weight=metal_weight+i.weight_of_metal
-			metal_type=i.metal 
+			metal_type=i.metal
 			making_charges=making_charges+i.weight_of_metal*gold_price*i.making_charges/100
 			if i.carats=='22':
 				gold_price=GoldPrice.objects.get(id=1).price_per_gm_22_kt
@@ -66,13 +67,13 @@ def product_detail_page(request,code):
 				metal_kt=i.carats
 			elif i.carats=='14':
 				gold_price=GoldPrice.objects.get(id=1).price_per_gm_14_kt
-				metal_kt=i.carats    	
+				metal_kt=i.carats
 			metal_cost=i.weight_of_metal*gold_price
 
 	if diamond_data:
 		for i in diamond_data:
 			diamond_charges=diamond_charges+i.diamond_price*i.weight_of_diamonds     #price is per carat
-			total_diamond_weight=total_diamond_weight+i.weight_of_diamonds       
+			total_diamond_weight=total_diamond_weight+i.weight_of_diamonds
 
 	if gemstone_data:
 		for i in gemstone_data:
@@ -86,7 +87,7 @@ def product_detail_page(request,code):
 	'diamond_weight':total_diamond_weight,'diamond_color':diamond_color,
 	'diamond_clarity':diamond_clarity,'diamond_data':diamond_data,
 	'gemstone_data':gemstone_data,'image_data':image_data}
-	return render(request,'product_detail/product_detail.html',data)     
+	return render(request,'product_detail/product_detail.html',data)
 
 
 
