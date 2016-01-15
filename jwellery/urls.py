@@ -17,12 +17,6 @@ Including another URLconf
 # from django.contrib import admin
 # import grappelli
 
-# urlpatterns = patterns('',
-#          url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
-#          url(r'^admin/',  include(admin.site.urls)), # admin site URLS
-#          url(r'^')
-# )
-
 from django.conf.urls import include, url
 from django.contrib import admin
 #from register.views import *
@@ -31,5 +25,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 #    url(r'^',include('register.urls')),
     url(r'^',include('roughViews.urls')),
+ 
 
 ]
