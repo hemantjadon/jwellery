@@ -1,10 +1,11 @@
 @backgroundColor:#D2D2D2;
 @navFontColor:#908F8F;
-@highlightColor:#30aadc;
+//@highlightColor:#30aadc;
 @highlightColor:#08ECFF;
 @baseFont:'Oxygen', sans-serif;
 @linkColor:black;
 @tableBackgroundColor:#f6f1ef;
+@borderBottom:#d9d9d7;
 
 body{
 	background-color: lighten(@backgroundColor,15%);
@@ -128,22 +129,22 @@ body{
 		                    {
 		                        margin-left:25px;
 		                        font-size:1.7em;
-		                        color:navFontColor;
+		                        color:@navFontColor;
 
 		                    }
 
 		                    #ene:hover
 		                    {
-		                       color:rgba(243, 240, 35, 0.96);
-
+		                         color: @highlightColor;
+                                 
 		                    }
 		                    #fb:hover
 		                    {
-		                       color:#4267DA;
+		                       color:@highlightColor;
 		                    }
 		                    #heart:hover
 		                    {
-		                       color:purple;
+		                       color:@highlightColor;
 		                    }
 
 		                 }		      
@@ -159,16 +160,17 @@ body{
            {
                width:100%;
                //height:400px;
-               height:100%;
+               height:110%;
                background-color:darken(@backgroundColor,1%);
                margin-top:0.9%;
-               
+               display:flex;
                #product_panel
                 {   
-
+                    width:80%;
+                  
 	               #basic_details
 	               {
-	                  width:60%;
+	                  width:75%;
                       margin-top:3%;
                       margin-left:5%;
 
@@ -185,8 +187,8 @@ body{
 							  border-color: #78777c;
 				              td
 				              {
-				                      border-bottom: 1px solid #d9d9d7;
-	                                  background: #f6f1ef;
+				                      border-bottom: 1px solid @borderBottom;
+	                                  background: @tableBackgroundColor;
 	                                  padding: 0.4rem 0rem;
 									  color: #1f1e24;
 									  font-size: 12px;
@@ -199,7 +201,7 @@ body{
 
 				    #basic_diamond_details
                      {
-                          width:60%;
+                          width:75%;
                           margin-top:3%;
                           margin-left:5%;
 					     .diamond_details
@@ -213,8 +215,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background: @tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;
@@ -228,7 +230,7 @@ body{
 
 				    #basic_gemstone_details
                      {
-                          width:60%;
+                          width:75%;
                       margin-top:3%;
                       margin-left:5%;
 					     .gemstone_details
@@ -242,8 +244,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background: @tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;
@@ -257,7 +259,7 @@ body{
 
                 #query-form
                 {
-                   width:30%;
+                   width:20%;
                    height:400px;
                    background-color:white;
                 }
@@ -425,16 +427,16 @@ body{
 
 		                    #ene:hover
 		                    {
-		                       color:rgba(243, 240, 35, 0.96);
+		                       color:@highlightColor;
 
 		                    }
 		                    #fb:hover
 		                    {
-		                       color:#4267DA;
+		                       color:@highlightColor;
 		                    }
 		                    #heart:hover
 		                    {
-		                       color:purple;
+		                       color:@highlightColor;
 		                    }
 
 		                 }		      
@@ -451,11 +453,12 @@ body{
                width:100%;
                //height:400px;
                height:100%;
-               background-color:darken(@backgroundColor,1%);
+               //background-color:darken(@backgroundColor,1%);
                margin-top:0.9%;
                
                #product_panel
                 {   
+                   background-color:darken(@backgroundColor,1%);
 
 	               #basic_details
 	               {
@@ -476,8 +479,8 @@ body{
 							  border-color: #78777c;
 				              td
 				              {
-				                      border-bottom: 1px solid #d9d9d7;
-	                                  background: #f6f1ef;
+				                      border-bottom: 1px solid @borderBottom;
+	                                  background:@tableBackgroundColor;
 	                                  padding: 0.4rem 0rem;
 									  color: #1f1e24;
 									  font-size: 12px;
@@ -504,8 +507,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background:@tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;
@@ -533,8 +536,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background:@tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;
@@ -549,8 +552,14 @@ body{
                 #query-form
                 {
                    width:30%;
-                   height:400px;
-                   background-color:white;
+                   height:50%;
+                   margin-top:3%;
+                     #query
+                     {
+                        background-color:white;
+                        height:100%;
+                        width:100%;
+                     }
                 }
 
             }
@@ -716,16 +725,16 @@ body{
 
 		                    #ene:hover
 		                    {
-		                       color:rgba(243, 240, 35, 0.96);
+		                       color:@highlightColor;
 
 		                    }
 		                    #fb:hover
 		                    {
-		                       color:#4267DA;
+		                       color:@highlightColor;
 		                    }
 		                    #heart:hover
 		                    {
-		                       color:purple;
+		                       color:@highlightColor;
 		                    }
 
 		                 }		      
@@ -767,8 +776,8 @@ body{
 							  border-color: #78777c;
 				              td
 				              {
-				                      border-bottom: 1px solid #d9d9d7;
-	                                  background: #f6f1ef;
+				                      border-bottom: 1px solid @borderBottom;
+	                                  background:@tableBackgroundColor;
 	                                  padding: 0.4rem 0rem;
 									  color: #1f1e24;
 									  font-size: 12px;
@@ -795,8 +804,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background:@tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;
@@ -824,8 +833,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background:@tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;
@@ -1007,16 +1016,16 @@ body{
 
 		                    #ene:hover
 		                    {
-		                       color:rgba(243, 240, 35, 0.96);
+		                       color:@highlightColor;
 
 		                    }
 		                    #fb:hover
 		                    {
-		                       color:#4267DA;
+		                       color:@highlightColor;
 		                    }
 		                    #heart:hover
 		                    {
-		                       color:purple;
+		                       color:@highlightColor;
 		                    }
 
 		                 }		      
@@ -1061,8 +1070,8 @@ body{
 							  border-color: #78777c;
 				              td
 				              {
-				                      border-bottom: 1px solid #d9d9d7;
-	                                  background: #f6f1ef;
+				                      border-bottom: 1px solid @borderBottom;
+	                                  background: @tableBackgroundColor;
 	                                  padding: 0.4rem 0rem;
 									  color: #1f1e24;
 									  font-size: 12px;
@@ -1089,8 +1098,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background: @tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;
@@ -1118,8 +1127,8 @@ body{
 								  border-color: #78777c;
 					              td
 					              {
-					                      border-bottom: 1px solid #d9d9d7;
-		                                  background: #f6f1ef;
+					                      border-bottom: 1px solid @borderBottom;
+		                                  background:@tableBackgroundColor;
 		                                  padding: 0.4rem 0rem;
 										  color: #1f1e24;
 										  font-size: 12px;

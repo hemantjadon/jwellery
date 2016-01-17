@@ -13,5 +13,6 @@ urlpatterns = patterns('',
 				url(r'^gifts/$',giftsPage,name='gifts_page'),
 		#		url(r'^fb/$',fbPage,name='fb_page'),
 				url(r'^jwellery/(?P<code>[a-zA-Z0-9_.-=$]+)/$',product_detail_page),
+				url(r'^customer/account/create/$',account_create),
 
 			)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
